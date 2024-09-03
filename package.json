@@ -1,0 +1,29 @@
+{
+  "name": "k6-performance-tests",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A k6 playground for performance testing.",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --parser-options=ecmaVersion:latest,sourceType:module .",
+    "test": "k6 run"
+  },
+  "author": "Jeremy Elwood",
+  "homepage": "https://github.com/Jmelwood",
+  "license": "GPL-3.0",
+  "repository": "github:Jmelwood/k6-performance-tests",
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/k6": "^0.53.1",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
