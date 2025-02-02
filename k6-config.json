@@ -1,0 +1,8 @@
+{
+  "thresholds": {
+    "http_req_failed": [{ "threshold": "rate<=0.05", "abortOnFail": true }],
+    "http_req_duration": ["p(95)<=5000"],
+    "checks": [{ "threshold": "rate>=0.9", "abortOnFail": true }]
+  },
+  "throw": true
+}

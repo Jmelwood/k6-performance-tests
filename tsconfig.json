@@ -1,8 +1,4 @@
 {
-  "ts-node": {
-    "files": true,
-    "esm": true
-  },
   "compilerOptions": {
     // Code generation options
     "target": "esnext",
@@ -19,7 +15,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "noErrorTruncation": true
+    "noErrorTruncation": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "k6/x/faker": ["./faker.d.ts"]
+    }
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "<node_internals>/**"]

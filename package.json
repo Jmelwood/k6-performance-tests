@@ -1,26 +1,34 @@
 {
   "name": "k6-performance-tests",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "description": "A k6 playground for performance testing.",
   "scripts": {
-    "format": "prettier --write .",
-    "lint": "eslint --parser-options=ecmaVersion:latest,sourceType:module .",
-    "test": "k6 run"
+    "format": "prettier --write \"src/**/*.{js,ts,cjs,mjs}\"",
+    "lint": "eslint --fix \"src/**/*.{js,ts,cjs,mjs}\"",
+    "type-check": "tsc --noEmit",
+    "k6:setup": "cross-env K6_BINARY_PATH=${K6_BINARY_PATH:=k6} npm run k6:execute --",
+    "k6:execute": "cross-env $K6_BINARY_PATH run --config k6-config.json --compatibility-mode=experimental_enhanced",
+    "start:local": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html npm run k6:setup --"
   },
   "author": "Jeremy Elwood",
   "homepage": "https://github.com/Jmelwood",
   "license": "GPL-3.0",
   "repository": "github:Jmelwood/k6-performance-tests",
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "@types/k6": "^0.53.1",
-    "eslint": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0"
+    "@eslint/js": "^9.19.0",
+    "@types/k6": "^0.54.2",
+    "@types/node": "^22.13.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.22.0"
   },
   "engines": {
     "node": ">=20.0.0",
