@@ -10,23 +10,7 @@ All code is written in [TypeScript](https://www.typescriptlang.org/docs/handbook
 ## Prerequisites
 
 - Node.js (use the latest LTS version)
-- A **CUSTOM** k6 binary - see the below section
-
-### k6 binary
-
-Because extensions are used (Faker / SSE support), a binary has to be manually created for your computer, rather than downloading/using
-the base k6 binary that Grafana pre-builds for easy use. To do so:
-
-1. [Follow these instructions](https://grafana.com/docs/k6/latest/extensions/build-k6-binary-using-docker/)
-   - For the `--with` arguments, specify the following: `--with github.com/phymbert/xk6-sse@latest --with github.com/grafana/xk6-faker@latest`
-2. Use the correct binary; there are two options:
-   1. Put the binary in your path (recommended):
-      - This is a macOS command example to make a symbolic link from where you put it (ie. home folder) to a place already in your path (ie. `/usr/local/bin`):
-        `sudo ln -s ~/k6 /usr/local/bin`
-      - To verify it worked, the path to the symbolic link should be specified when you type `which k6` (or `where k6` in Windows)
-   2. Specify the binary's path with environment variable `K6_BINARY_PATH` - simply prepend this with the file path as the value (ie. `K6_BINARY_PATH=/Users/john/k6`)
-
-If you need to update k6, simply repeat the same steps and overwrite the old binary.
+- [k6 (see linked instructions)](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 
 ## Quick Start
 
