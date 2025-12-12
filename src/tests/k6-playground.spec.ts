@@ -24,7 +24,6 @@ export async function frontend() {
 
   try {
     await page.goto(constants.webUrl);
-    // await Promise.all([page.waitForNavigation(), loginButton.click()]);
   } finally {
     await page.close();
   }
